@@ -1,0 +1,10 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+  },
+  "python.formatting.provider": "none",
+  "python.analysis.extraPaths": [
+    "/usr/local/lib/python3.10/site-packages",
+    "${workspaceFolder}/src"
+  ]
+}

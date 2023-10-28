@@ -1,0 +1,18 @@
+{
+  "title": "Test SessionConfiguration",
+  "num_boids": 10,
+  "world": {
+    "width": 200,
+    "height": 200
+  },
+  "behavior": {
+    "avoid_walls": true,
+    "normalize_velocity": true,
+    "view_range": 10,
+    "view_angle": 90,
+    "speed_limits": {
+      "min": 5,
+      "max": 10
+    }
+  }
+}
