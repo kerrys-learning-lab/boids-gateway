@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run BoidsSimulation",
+            "type": "shell",
+            "command": "${workspaceFolder}/BoidsSimulation.py --verbose --port 9090 ${workspaceFolder}/conf.d/*.yaml",
+            "isBackground": true,
+            "options": {
+                "env": {
+                    "PYTHONPATH": "${workspaceFolder}/src"
+                }
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
