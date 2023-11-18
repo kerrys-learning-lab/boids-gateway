@@ -2,9 +2,22 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.python",
   },
-  "python.formatting.provider": "none",
   "python.analysis.extraPaths": [
     "/usr/local/lib/python3.10/site-packages",
     "${workspaceFolder}/src"
-  ]
+  ],
+  "terminal.integrated.profiles.linux": {
+    "docker exec (root)": {
+      "path": "docker",
+      "args": [
+        "exec",
+        "--interactive",
+        "--tty",
+        "--user",
+        "0",
+        "boids-gateway",
+        "bash"
+      ]
+    }
+  }
 }
