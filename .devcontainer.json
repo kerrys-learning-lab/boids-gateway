@@ -1,11 +1,9 @@
 {
-	"name": "Ubuntu",
-	"dockerComposeFile": [
-		"../docker-compose.yml"
-	],
+	"name": "boids-gateway",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "boids-gateway",
 	"workspaceFolder": "/opt/boids-gateway",
 	"remoteUser": "python",
-	"service": "boids-gateway",
 	"customizations": {
 		"vscode": {
 			"extensions": [

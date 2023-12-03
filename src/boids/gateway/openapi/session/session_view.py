@@ -4,7 +4,7 @@ import aiohttp.web_exceptions
 import aiohttp.web_request
 import aiohttp.web_response
 import aiohttp.web
-import boidsapi.model
+import boids_api.boids
 import boids_utils.openapi
 import boids.gateway.controllers.session
 
@@ -23,7 +23,7 @@ class SessionView:
         Searches for Sessions matching the given combination of title, state,
         uuid, etc.
         """
-        pagination = boidsapi.model.Pagination.from_dict(kwargs)
+        pagination = boids_api.boids.Pagination.from_dict(kwargs)
         state = boids_utils.openapi.to_SessionState(state)
 
         result = await boids.gateway.controllers.session.search(title=title,
@@ -46,7 +46,7 @@ class SessionView:
                    request: aiohttp.web_request.Request = None):
         """ Creates a new Session """
         self._assert_fields('post', body)
-        config = boidsapi.model.SessionConfiguration.from_dict(body)
+        config = boids_api.boids.SessionConfiguration.from_dict(body)
 
         result = await boids.gateway.controllers.session.create(config, request.url)
 
@@ -58,7 +58,7 @@ class SessionView:
                   request: aiohttp.web_request.Request = None):
         """ Modifies an existing Session """
         self._assert_fields('put', body)
-        config = boidsapi.model.SessionConfiguration.from_dict(body)
+        config = boids_api.boids.SessionConfiguration.from_dict(body)
 
         result = await boids.gateway.controllers.session.modify(uuid, config, request.url)
 
