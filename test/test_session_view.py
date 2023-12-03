@@ -4,7 +4,7 @@ import logging
 import pytest
 import aiohttp.web_request
 import boids
-import boidsapi.model
+import boids_api.boids
 import boids_utils.elastic
 import boids_utils.openapi
 import boids_utils.pubsub
@@ -47,7 +47,7 @@ async def test_create(test_pubsub_broker: boids_utils.pubsub,
     async with client.post('/api/v1/session', json=session_config) as response:
 
         created_json = await response.json()
-        created_obj = boidsapi.model.SessionConfigurationStatus.from_dict(created_json)
+        created_obj = boids_api.boids.SessionConfigurationStatus.from_dict(created_json)
         LOGGER.debug(f'created: {created_json}')
 
         now = boids_utils.nowutc()
